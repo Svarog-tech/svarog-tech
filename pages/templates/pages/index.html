@@ -6,93 +6,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
-<script>
-tailwind.config = {
-theme: {
-fontFamily: {
-sans: ['Inter', 'sans-serif'],
-},
-extend: {
-colors: {
-background: '#080500', // Deep warm black
-},
-animation: {
-'grid-move': 'grid-move 20s linear infinite',
-'float': 'float 6s ease-in-out infinite',
-'float-delayed': 'float 8s ease-in-out infinite reverse',
-'pulse-glow': 'pulse-glow 8s ease-in-out infinite',
-'pulse-glow-rev': 'pulse-glow 10s ease-in-out infinite reverse',
-'reveal': 'reveal-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards',
-},
-keyframes: {
-'grid-move': {
-'0%': { backgroundPosition: '0 0' },
-'100%': { backgroundPosition: '40px 40px' },
-},
-'float': {
-'0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
-'50%': { transform: 'translateY(-20px) rotate(2deg)' },
-},
-'pulse-glow': {
-'0%, 100%': { opacity: '0.5', transform: 'scale(1)', filter: 'blur(80px)' },
-'50%': { opacity: '0.8', transform: 'scale(1.1)', filter: 'blur(100px)' },
-},
-'reveal-up': {
-'from': { opacity: '0', transform: 'translateY(30px)' },
-'to': { opacity: '1', transform: 'translateY(0)' },
-}
-}
-}
-}
-}
-</script>
-<style>
-body {
-background-color: #080500;
-color: #fffbf0;
-overflow: hidden; 
-}
-.glass-card {
-background: rgba(255, 215, 0, 0.02);
-backdrop-filter: blur(12px);
--webkit-backdrop-filter: blur(12px);
-border: 1px solid rgba(255, 215, 0, 0.15);
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-}
-/* Hide scrollbar */
-.no-scrollbar::-webkit-scrollbar {
-display: none;
-}
-.no-scrollbar {
--ms-overflow-style: none;
-scrollbar-width: none;
-}
-.scroll-container {
-height: 100vh;
-overflow-y: scroll;
-scroll-snap-type: y mandatory;
-scroll-behavior: smooth;
-}
-section {
-scroll-snap-align: start;
-scroll-snap-stop: always;
-}
-.text-gradient {
-background: linear-gradient(to bottom, #fff8dc, #ffd700, rgba(255, 215, 0, 0.3));
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-}
-.text-gradient-gold {
-background: linear-gradient(135deg, #FFF8E7 0%, #FFD700 50%, #B8860B 100%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-}
-.nav-dot.active {
-height: 2rem;
-background-color: #FFD700;
-box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
-}
-</style>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="../../static/pages/js/tailwind.js"></script>
+
+
+<link rel="stylesheet" href="../../static/pages/css/style.css" />
 </head>
   <body class="antialiased selection:bg-amber-500/20 selection:text-amber-100">
     <!-- Global Background -->
@@ -151,20 +70,16 @@ box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
         </div>
 
         <div class="max-w-4xl text-center space-y-8 z-10 animate-reveal">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-amber-500/20 bg-amber-500/5 text-[10px] uppercase tracking-widest text-amber-200/70 mb-4">
-            <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse shadow-[0_0_8px_rgba(251,191,36,0.5)]"></span>
-            Horizon Radar v2.0
-          </div>
+
 
           <h1 class="text-6xl md:text-8xl font-semibold tracking-tighter leading-[0.9] text-white">
-            Clarity for
-            <br>
-            <span class="text-gradient-gold">Crypto Research</span>
+            <span class="text-gradient-gold">Svarog</span> Tech
+            
+            
           </h1>
 
           <p class="text-lg md:text-xl text-amber-100/50 max-w-2xl mx-auto font-light leading-relaxed">
-            Scouting the horizon of formidable blockchain technology for Web3
-            savants. Precision-engineered insights in a chaotic market.
+            Nejaky kecy o tom jak jsme inovativni nova ceska technicka spolecnost nebo neco takovyho
           </p>
 
           <div class="flex items-center justify-center gap-4 pt-8">
@@ -188,20 +103,17 @@ box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
               <!-- Floating Items -->
               <div class="absolute top-[10%] left-[10%] glass-card p-3 rounded-xl flex items-center gap-3 animate-float border-amber-500/20">
                 <i data-lucide="globe" class="w-4 h-4 text-amber-200/70"></i>
-                <span class="text-xs font-medium text-amber-100/50">Twitter</span>
+                <span class="text-xs font-medium text-amber-100/50">domena</span>
               </div>
               <div class="absolute top-[20%] right-[10%] glass-card p-3 rounded-xl flex items-center gap-3 animate-float border-amber-500/20" style="animation-delay: 1s;">
                 <i data-lucide="database" class="w-4 h-4 text-amber-200/70"></i>
-                <span class="text-xs font-medium text-amber-100/50">On-Chain</span>
+                <span class="text-xs font-medium text-amber-100/50">server</span>
               </div>
               <div class="absolute bottom-[20%] left-[20%] glass-card p-3 rounded-xl flex items-center gap-3 animate-float border-amber-500/20" style="animation-delay: 0.5s;">
                 <i data-lucide="activity" class="w-4 h-4 text-amber-200/70"></i>
-                <span class="text-xs font-medium text-amber-100/50">Price</span>
+                <span class="text-xs font-medium text-amber-100/50">analytika</span>
               </div>
-              <div class="absolute bottom-[10%] right-[30%] glass-card p-3 rounded-xl flex items-center gap-3 animate-float border-amber-500/20" style="animation-delay: 1.5s;">
-                <i data-lucide="layers" class="w-4 h-4 text-amber-200/70"></i>
-                <span class="text-xs font-medium text-amber-100/50">Gov</span>
-              </div>
+
 
               <!-- Dotted Lines SVG -->
               <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-20">
@@ -219,19 +131,16 @@ box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
           <!-- Text -->
           <div class="order-1 md:order-2 space-y-8">
             <h2 class="text-5xl md:text-7xl font-semibold tracking-tighter leading-none text-white">
-              <span class="text-amber-100/30">Research is</span>
-              <br>
-              Fractionalized.
+              Alatyr
+              <span class="text-amber-100/30">Hosting</span>
+              
             </h2>
             <p class="text-lg text-amber-100/60 font-light max-w-md">
-              The alpha is scattered across specific discords, hidden governance
-              forums, and obscure on-chain data. The whole story is never in one
-              place—until now.
+              nejlepsi hosting v na svete kupte si nas merch prosim prosim predstav si ze tu je nejakej smysluplnej text dik
             </p>
             <div class="flex gap-4 items-center">
-              <div class="h-px w-16 bg-gradient-to-r from-amber-500/50 to-transparent"></div>
               <span class="text-xs font-mono text-amber-500/50">
-                SYSTEM ERROR: FRAGMENTATION DETECTED
+                LIGHTSPEED HOSTING
               </span>
             </div>
           </div>

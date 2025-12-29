@@ -1,1 +1,46 @@
 /* Svarog Tech main stylesheet */
+body {
+background-color: #080500;
+color: #fffbf0;
+overflow: hidden; 
+}
+.glass-card {
+background: rgba(255, 215, 0, 0.02);
+backdrop-filter: blur(12px);
+-webkit-backdrop-filter: blur(12px);
+border: 1px solid rgba(255, 215, 0, 0.15);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+/* Hide scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+display: none;
+}
+.no-scrollbar {
+-ms-overflow-style: none;
+scrollbar-width: none;
+}
+.scroll-container {
+height: 100vh;
+overflow-y: scroll;
+scroll-snap-type: y mandatory;
+scroll-behavior: smooth;
+}
+section {
+scroll-snap-align: start;
+scroll-snap-stop: always;
+}
+.text-gradient {
+background: linear-gradient(to bottom, #fff8dc, #ffd700, rgba(255, 215, 0, 0.3));
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+.text-gradient-gold {
+background: linear-gradient(135deg, #FFF8E7 0%, #FFD700 50%, #B8860B 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+.nav-dot.active {
+height: 2rem;
+background-color: #FFD700;
+box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+}
