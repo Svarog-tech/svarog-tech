@@ -27,20 +27,23 @@
         </div>
       </div>
       <nav class="pointer-events-auto hidden md:flex items-center gap-6 bg-[#0f0a00]/60 backdrop-blur-xl px-6 py-2 rounded-full border border-amber-500/10 shadow-2xl">
-        <a href="#" class="text-sm font-medium text-amber-100/60 hover:text-amber-100 transition-colors">
-          Služby
+        <a href="#" onclick="scrollToIndex(1)" class="text-sm font-medium text-amber-100/60 hover:text-amber-100 transition-colors">
+          O nás
         </a>
-        <a href="#" class="text-sm font-medium text-amber-100/60 hover:text-amber-100 transition-colors">
-          Technologie
+        <a href="#" onclick="scrollToIndex(2)" class="text-sm font-medium text-amber-100/60 hover:text-amber-100 transition-colors">
+          Hosting
+        </a>
+        <a href="#" onclick="scrollToIndex(4)" class="text-sm font-medium text-amber-100/60 hover:text-amber-100 transition-colors">
+          Tým
         </a>
         <a href="contact" class="text-sm font-medium text-amber-100/60 hover:text-amber-100 transition-colors">
-          Contact
+          Kontakt
         </a>
       </nav>
       <div class="pointer-events-auto">
-        <button class="px-4 py-2 text-xs font-semibold tracking-wide bg-amber-100 text-amber-950 rounded-full hover:bg-amber-200 transition-all border border-amber-200/50 shadow-[0_0_15px_rgba(255,215,0,0.15)]">
+        <a href="https://[PLACEHOLDER-URL].cz/login" class="px-4 py-2 text-xs font-semibold tracking-wide bg-amber-100 text-amber-950 rounded-full hover:bg-amber-200 transition-all border border-amber-200/50 shadow-[0_0_15px_rgba(255,215,0,0.15)] inline-block">
           PŘIHLÁSIT SE
-        </button>
+        </a>
       </div>
     </header>
 
@@ -85,19 +88,91 @@
           </p>
 
           <div class="flex items-center justify-center gap-4 pt-8">
-            <button onclick="scrollToIndex(1)" class="group relative px-8 py-4 bg-gradient-to-b from-amber-100 to-amber-200 text-amber-950 rounded-full font-semibold text-sm tracking-tight overflow-hidden transition-all hover:scale-105 shadow-[0_0_20px_rgba(255,215,0,0.15)]">
+            <a href="https://[PLACEHOLDER-URL].cz" class="group relative px-8 py-4 bg-gradient-to-b from-amber-100 to-amber-200 text-amber-950 rounded-full font-semibold text-sm tracking-tight overflow-hidden transition-all hover:scale-105 shadow-[0_0_20px_rgba(255,215,0,0.15)]">
               <div class="absolute inset-0 bg-white/40 opacity-0 group-hover:opacity-100 transition-opacity"></div>
               <span class="relative flex items-center gap-2">
-                Naše služby
-                <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                Přejít na webhosting
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
               </span>
+            </a>
+            <button onclick="scrollToIndex(1)" class="px-8 py-4 bg-transparent border-2 border-amber-500/30 text-amber-100 rounded-full font-semibold text-sm tracking-tight hover:border-amber-500/60 hover:bg-amber-500/10 transition-all">
+              Zjistit více
             </button>
           </div>
         </div>
       </section>
 
-      <!-- SECTION 2: THE PROBLEM -->
+      <!-- SECTION 1: ABOUT US / COMPANY STORY -->
       <section id="section-1" class="h-screen w-full flex items-center justify-center relative px-6 snap-center">
+        <div class="max-w-6xl w-full">
+          <div class="text-center mb-16">
+            <h2 class="text-5xl md:text-7xl font-semibold tracking-tighter leading-none text-white mb-6">
+              O společnosti
+              <span class="text-gradient-gold">Svarog</span>
+            </h2>
+            <p class="text-xl text-amber-100/60 font-light max-w-3xl mx-auto">
+              Jsme mladá technologická společnost se zaměřením na kvalitní webhosting a moderní cloudová řešení.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <!-- Story Content -->
+            <div class="space-y-6">
+              <div class="glass-card p-8 rounded-2xl border-amber-500/10">
+                <h3 class="text-2xl font-semibold text-white mb-4">Naše mise</h3>
+                <p class="text-amber-100/60 leading-relaxed">
+                  [PLACEHOLDER: Zde bude text o vaší misi - například poskytovat nejrychlejší a nejspolehlivější hosting v ČR,
+                  pomáhat firmám růst online, nebo demokratizovat přístup k moderním technologiím.]
+                </p>
+              </div>
+
+              <div class="glass-card p-8 rounded-2xl border-amber-500/10">
+                <h3 class="text-2xl font-semibold text-white mb-4">Naše hodnoty</h3>
+                <ul class="space-y-3 text-amber-100/60">
+                  <li class="flex items-start gap-3">
+                    <i data-lucide="check-circle" class="w-5 h-5 text-amber-400 mt-0.5"></i>
+                    <span>Transparentnost a poctivost</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <i data-lucide="check-circle" class="w-5 h-5 text-amber-400 mt-0.5"></i>
+                    <span>Technická excelence</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <i data-lucide="check-circle" class="w-5 h-5 text-amber-400 mt-0.5"></i>
+                    <span>Zákaznická podpora na prvním místě</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Visual/Stats -->
+            <div class="space-y-6">
+              <div class="glass-card p-8 rounded-2xl border-amber-500/10">
+                <h3 class="text-2xl font-semibold text-white mb-4">Proč jsme tu</h3>
+                <p class="text-amber-100/60 leading-relaxed mb-6">
+                  [PLACEHOLDER: Váš příběh - jak jste začali, proč jste založili společnost,
+                  jaký problém řešíte. Například: "Založili jsme Svarog Tech v roce 2024, protože jsme viděli mezeru
+                  na trhu pro hosting, který kombinuje vysoký výkon s osobním přístupem."]
+                </p>
+
+                <div class="grid grid-cols-2 gap-4 mt-8">
+                  <div class="text-center p-4 bg-amber-500/5 rounded-lg">
+                    <div class="text-3xl font-bold text-amber-200">2024</div>
+                    <div class="text-xs text-amber-100/50 mt-1">Založení</div>
+                  </div>
+                  <div class="text-center p-4 bg-amber-500/5 rounded-lg">
+                    <div class="text-3xl font-bold text-amber-200">100%</div>
+                    <div class="text-xs text-amber-100/50 mt-1">České</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: ALATYR HOSTING -->
+      <section id="section-2" class="h-screen w-full flex items-center justify-center relative px-6 snap-center">
         <div class="max-w-6xl w-full grid md:grid-cols-2 gap-16 items-center">
           <!-- Visual -->
           <div class="order-2 md:order-1 relative h-[400px] w-full">
@@ -149,8 +224,8 @@
         </div>
       </section>
 
-      <!-- SECTION 3: THE SOLUTION -->
-      <section id="section-2" class="h-screen w-full flex items-center justify-center relative px-6 overflow-hidden snap-center">
+      <!-- SECTION 3: WHY CHOOSE US -->
+      <section id="section-3" class="h-screen w-full flex items-center justify-center relative px-6 overflow-hidden snap-center">
         <!-- Center Glow -->
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-600/10 rounded-full blur-[120px]"></div>
 
@@ -205,82 +280,152 @@
         </div>
       </section>
 
-      <!-- SECTION 4: HOW IT WORKS -->
-      <section id="section-3" class="h-screen w-full flex items-center justify-center relative px-6 snap-center">
-        <div class="flex flex-col md:flex-row gap-12 items-center max-w-7xl w-full">
-          <div class="flex-1 space-y-8">
-            <h2 class="text-5xl md:text-6xl font-semibold tracking-tighter text-white">
-              Vše, co potřebujete pro svůj web
-              <br>
-              <span class="text-amber-200"></span>
+      <!-- SECTION 4: TEAM -->
+      <section id="section-4" class="h-screen w-full flex items-center justify-center relative px-6 snap-center">
+        <div class="max-w-6xl w-full">
+          <div class="text-center mb-16">
+            <h2 class="text-5xl md:text-7xl font-semibold tracking-tighter leading-none text-white mb-6">
+              Náš
+              <span class="text-gradient-gold">Tým</span>
             </h2>
-            <div class="space-y-6">
-              <div class="flex items-start gap-4 group">
-                <div class="mt-1 w-5 h-5 rounded-full border border-amber-500/20 flex items-center justify-center group-hover:border-amber-400 group-hover:bg-amber-500/10 transition-colors">
-                  <div class="w-1.5 h-1.5 bg-amber-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                </div>
-                <p class="text-lg text-amber-100/60 font-light group-hover:text-white transition-colors">
-                  Jednoduchá instalace redakčních systémů na jedno kliknutí.
-                </p>
-              </div>
-              <div class="flex items-start gap-4 group">
-                <div class="mt-1 w-5 h-5 rounded-full border border-amber-500/20 flex items-center justify-center group-hover:border-amber-400 group-hover:bg-amber-500/10 transition-colors">
-                  <div class="w-1.5 h-1.5 bg-amber-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                </div>
-                <p class="text-lg text-amber-100/60 font-light group-hover:text-white transition-colors">
-                  Neomezený přenos dat a dostatek prostoru pro vaše projekty.
-                </p>
-              </div>
-              <div class="flex items-start gap-4 group">
-                <div class="mt-1 w-5 h-5 rounded-full border border-amber-500/20 flex items-center justify-center group-hover:border-amber-400 group-hover:bg-amber-500/10 transition-colors">
-                  <div class="w-1.5 h-1.5 bg-amber-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                </div>
-                <p class="text-lg text-amber-100/60 font-light group-hover:text-white transition-colors">
-                  Snadná správa vašeho hostingu přes přehledné webové rozhraní.
-                </p>
-              </div>
-            </div>
+            <p class="text-xl text-amber-100/60 font-light max-w-2xl mx-auto">
+              Poznávejte lidi za Svarog Tech - odborníky, kteří dělají hosting realitou.
+            </p>
           </div>
 
-          <!-- Interface Visualization -->
-          <div class="flex-1 relative h-[600px] w-full flex items-center justify-center perspective-1000">
-            <div class="w-4/5 h-auto glass-card rounded-2xl p-6 border-t-amber-200/20 shadow-2xl transform rotate-12 hover:rotate-0 transition-transform duration-700 ease-out border-l-amber-500/5">
-              <div class="flex gap-2 mb-4">
-                <div class="w-3 h-3 rounded-full bg-amber-700/50"></div>
-                <div class="w-3 h-3 rounded-full bg-amber-600/50"></div>
-                <div class="w-3 h-3 rounded-full bg-amber-500/50"></div>
+          <div class="grid md:grid-cols-3 gap-8">
+            <!-- Team Member 1 -->
+            <div class="glass-card p-8 rounded-2xl border-amber-500/10 text-center group hover:border-amber-500/30 transition-all">
+              <div class="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-amber-500/20 to-amber-900/20 flex items-center justify-center group-hover:scale-105 transition-transform">
+                <i data-lucide="user" class="w-16 h-16 text-amber-300/50"></i>
               </div>
-              <div class="space-y-3">
-                <div class="h-4 w-3/4 bg-amber-100/10 rounded animate-pulse"></div>
-                <div class="h-4 w-1/2 bg-amber-100/10 rounded animate-pulse" style="animation-delay: 0.1s"></div>
-                <div class="h-4 w-full bg-amber-100/5 rounded mt-2"></div>
-                <div class="h-4 w-full bg-amber-100/5 rounded"></div>
-                <div class="h-32 w-full bg-gradient-to-b from-amber-900/10 to-transparent rounded border border-amber-500/10 mt-4 flex items-end justify-between px-4 pb-2">
-                  <div class="w-6 h-[40%] bg-amber-500/20 rounded-t-sm"></div>
-                  <div class="w-6 h-[70%] bg-amber-500/20 rounded-t-sm"></div>
-                  <div class="w-6 h-[50%] bg-amber-500/20 rounded-t-sm"></div>
-                  <div class="w-6 h-[90%] bg-amber-400/40 rounded-t-sm shadow-[0_0_10px_rgba(251,191,36,0.3)]"></div>
-                  <div class="w-6 h-[60%] bg-amber-500/20 rounded-t-sm"></div>
-                </div>
+              <h3 class="text-xl font-semibold text-white mb-2">[Jméno Příjmení]</h3>
+              <p class="text-sm text-amber-400 mb-4">Zakladatel & CEO</p>
+              <p class="text-sm text-amber-100/50 leading-relaxed">
+                [PLACEHOLDER: Krátký popis - např. "15 let zkušeností v IT, specialista na cloudové infrastruktury"]
+              </p>
+            </div>
+
+            <!-- Team Member 2 -->
+            <div class="glass-card p-8 rounded-2xl border-amber-500/10 text-center group hover:border-amber-500/30 transition-all">
+              <div class="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-amber-500/20 to-amber-900/20 flex items-center justify-center group-hover:scale-105 transition-transform">
+                <i data-lucide="user" class="w-16 h-16 text-amber-300/50"></i>
+              </div>
+              <h3 class="text-xl font-semibold text-white mb-2">[Jméno Příjmení]</h3>
+              <p class="text-sm text-amber-400 mb-4">CTO</p>
+              <p class="text-sm text-amber-100/50 leading-relaxed">
+                [PLACEHOLDER: Krátký popis - např. "Expert na síťové technologie a zabezpečení"]
+              </p>
+            </div>
+
+            <!-- Team Member 3 -->
+            <div class="glass-card p-8 rounded-2xl border-amber-500/10 text-center group hover:border-amber-500/30 transition-all">
+              <div class="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-amber-500/20 to-amber-900/20 flex items-center justify-center group-hover:scale-105 transition-transform">
+                <i data-lucide="user" class="w-16 h-16 text-amber-300/50"></i>
+              </div>
+              <h3 class="text-xl font-semibold text-white mb-2">[Jméno Příjmení]</h3>
+              <p class="text-sm text-amber-400 mb-4">Head of Support</p>
+              <p class="text-sm text-amber-100/50 leading-relaxed">
+                [PLACEHOLDER: Krátký popis - např. "Vedoucí zákaznické podpory, vždy k dispozici"]
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5: CASE STUDIES / PORTFOLIO -->
+      <section id="section-5" class="h-screen w-full flex items-center justify-center relative px-6 snap-center">
+        <div class="max-w-6xl w-full">
+          <div class="text-center mb-16">
+            <h2 class="text-5xl md:text-7xl font-semibold tracking-tighter leading-none text-white mb-6">
+              Naše
+              <span class="text-gradient-gold">Projekty</span>
+            </h2>
+            <p class="text-xl text-amber-100/60 font-light max-w-2xl mx-auto">
+              Příklady projektů a klientů, kterým pomáháme růst online.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- Case Study 1 -->
+            <div class="glass-card p-8 rounded-2xl border-amber-500/10 group hover:border-amber-500/30 transition-all">
+              <div class="w-full h-48 mb-6 rounded-lg bg-gradient-to-br from-amber-500/10 to-amber-900/10 flex items-center justify-center">
+                <i data-lucide="globe" class="w-16 h-16 text-amber-300/30"></i>
+              </div>
+              <h3 class="text-2xl font-semibold text-white mb-3">[Název projektu]</h3>
+              <p class="text-sm text-amber-400 mb-4">E-commerce / Blog / Aplikace</p>
+              <p class="text-sm text-amber-100/50 leading-relaxed mb-4">
+                [PLACEHOLDER: Popis projektu - např. "Rychlý e-shop s 10 000+ produkty, 99.99% uptime, průměrná doba načtení pod 1s"]
+              </p>
+              <div class="flex gap-4 text-xs text-amber-300/50">
+                <span>WordPress</span>
+                <span>•</span>
+                <span>CDN</span>
+                <span>•</span>
+                <span>SSL</span>
               </div>
             </div>
 
-            <!-- Floating Notification -->
-            <div class="absolute bottom-20 -left-6 glass-card p-4 rounded-xl flex items-center gap-3 animate-float border-l-4 border-l-amber-400 bg-[#0f0a00]">
-              <div class="w-8 h-8 rounded-full bg-amber-500/20 flex items-center justify-center text-amber-400">
-                <i data-lucide="mouse-pointer-2" class="w-4 h-4"></i>
+            <!-- Case Study 2 -->
+            <div class="glass-card p-8 rounded-2xl border-amber-500/10 group hover:border-amber-500/30 transition-all">
+              <div class="w-full h-48 mb-6 rounded-lg bg-gradient-to-br from-amber-500/10 to-amber-900/10 flex items-center justify-center">
+                <i data-lucide="code" class="w-16 h-16 text-amber-300/30"></i>
               </div>
-              <div>
-                <p class="text-xs font-semibold text-white">Váš web online</p>
-                <p class="text-[10px] text-amber-100/50">Během pár minut.</p>
+              <h3 class="text-2xl font-semibold text-white mb-3">[Název projektu]</h3>
+              <p class="text-sm text-amber-400 mb-4">Webová aplikace</p>
+              <p class="text-sm text-amber-100/50 leading-relaxed mb-4">
+                [PLACEHOLDER: Popis projektu - např. "SaaS aplikace s tisíci uživateli, škálovatelná architektura na našem hostingu"]
+              </p>
+              <div class="flex gap-4 text-xs text-amber-300/50">
+                <span>Node.js</span>
+                <span>•</span>
+                <span>PostgreSQL</span>
+                <span>•</span>
+                <span>Docker</span>
+              </div>
+            </div>
+
+            <!-- Case Study 3 -->
+            <div class="glass-card p-8 rounded-2xl border-amber-500/10 group hover:border-amber-500/30 transition-all">
+              <div class="w-full h-48 mb-6 rounded-lg bg-gradient-to-br from-amber-500/10 to-amber-900/10 flex items-center justify-center">
+                <i data-lucide="smartphone" class="w-16 h-16 text-amber-300/30"></i>
+              </div>
+              <h3 class="text-2xl font-semibold text-white mb-3">[Název projektu]</h3>
+              <p class="text-sm text-amber-400 mb-4">Portfolio / Landing page</p>
+              <p class="text-sm text-amber-100/50 leading-relaxed mb-4">
+                [PLACEHOLDER: Popis projektu - např. "Moderní portfolio s vysokým výkonem a skvělým UX"]
+              </p>
+              <div class="flex gap-4 text-xs text-amber-300/50">
+                <span>React</span>
+                <span>•</span>
+                <span>Nginx</span>
+                <span>•</span>
+                <span>Optimalizace</span>
+              </div>
+            </div>
+
+            <!-- Testimonial -->
+            <div class="glass-card p-8 rounded-2xl border-amber-500/10 flex flex-col justify-center">
+              <i data-lucide="quote" class="w-10 h-10 text-amber-400/30 mb-4"></i>
+              <p class="text-lg text-amber-100/70 italic mb-6 leading-relaxed">
+                "[PLACEHOLDER: Citát od klienta - např. 'Svarog Tech nám poskytl nejen skvělý hosting, ale i výbornou podporu. Náš web běží rychle a bez problémů.']"
+              </p>
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center">
+                  <i data-lucide="user" class="w-6 h-6 text-amber-300/50"></i>
+                </div>
+                <div>
+                  <p class="text-white font-semibold">[Jméno Klienta]</p>
+                  <p class="text-xs text-amber-100/50">[Pozice, Firma]</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- SECTION 5: CTA -->
-      <section id="section-4" class="h-screen w-full flex flex-col items-center justify-center relative px-6 bg-gradient-to-b from-transparent to-amber-900/10 snap-center">
+      <!-- SECTION 6: CTA -->
+      <section id="section-6" class="h-screen w-full flex flex-col items-center justify-center relative px-6 bg-gradient-to-b from-transparent to-amber-900/10 snap-center">
         <div class="max-w-4xl text-center space-y-10 relative z-10">
           <h2 class="text-6xl md:text-9xl font-semibold tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-amber-200/20">
             Jste připraveni?
@@ -290,29 +435,31 @@
           </p>
 
           <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
-
+            <a href="https://[PLACEHOLDER-URL].cz" class="w-full sm:w-auto px-10 py-5 bg-gradient-to-b from-amber-100 to-amber-200 text-amber-950 font-semibold rounded-full hover:scale-105 transition-all text-sm shadow-[0_0_20px_rgba(255,215,0,0.15)]">
+              Přejít na webhosting
+            </a>
             <a href="contact" class="w-full sm:w-auto px-10 py-5 bg-transparent border border-amber-500/20 text-amber-100 font-semibold rounded-full hover:bg-amber-500/10 transition-all text-sm">
-              Kontaktovat
+              Kontaktovat nás
             </a>
           </div>
 
           <div class="pt-12 grid grid-cols-3 gap-8 border-t border-amber-500/10 mt-12">
             <div>
-              <div class="text-2xl md:text-4xl font-bold text-white">10k+</div>
+              <div class="text-2xl md:text-4xl font-bold text-white">2024</div>
               <div class="text-[10px] uppercase tracking-widest text-amber-500/50 mt-1">
-                Spokojených zákazníků
+                Založeno
               </div>
             </div>
             <div>
-              <div class="text-2xl md:text-4xl font-bold text-white">99.9%</div>
+              <div class="text-2xl md:text-4xl font-bold text-white">24/7</div>
               <div class="text-[10px] uppercase tracking-widest text-amber-500/50 mt-1">
-                Dostupnost
+                Podpora
               </div>
             </div>
             <div>
-              <div class="text-2xl md:text-4xl font-bold text-white">100%</div>
+              <div class="text-2xl md:text-4xl font-bold text-white">ČR</div>
               <div class="text-[10px] uppercase tracking-widest text-amber-500/50 mt-1">
-                Rychlost
+                Lokální tým
               </div>
             </div>
           </div>
