@@ -12,6 +12,52 @@
 
 
 <link rel="stylesheet" href="../../static/pages/css/style.css" />
+<style>
+.form-container {
+  background-color: rgba(15, 10, 0, 0.6);
+  backdrop-filter: blur(12px);
+  border-radius: 1rem;
+  padding: 2rem;
+  border: 1px solid rgba(251, 191, 36, 0.1);
+  width: 100%;
+  max-width: 500px;
+}
+
+.form-input, .form-textarea {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(251, 191, 36, 0.3);
+  color: #fcd34d; /* amber-300 */
+  width: 100%;
+  padding: 0.75rem 0.25rem;
+  transition: all 0.3s;
+}
+
+.form-input:focus, .form-textarea:focus {
+  outline: none;
+  border-bottom: 1px solid #fcd34d; /* amber-300 */
+}
+
+.form-input::placeholder, .form-textarea::placeholder {
+  color: rgba(251, 191, 36, 0.5);
+}
+
+.form-button {
+  background-color: #fcd34d; /* amber-300 */
+  color: #451a03; /* amber-950 */
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.3s;
+  border: 1px solid transparent;
+}
+
+.form-button:hover {
+  background-color: transparent;
+  color: #fcd34d; /* amber-300 */
+  border: 1px solid #fcd34d; /* amber-300 */
+}
+</style>
 </head>
   <body class="antialiased selection:bg-amber-500/20 selection:text-amber-100">
     <!-- Global Background -->
@@ -48,12 +94,24 @@
     <!-- Main Content for Contact Page -->
     <main id="main-scroll" class="scroll-container no-scrollbar relative z-10">
       <section class="h-screen w-full flex flex-col items-center justify-center relative px-6 snap-center">
-        <h1 class="text-6xl md:text-8xl font-semibold tracking-tighter leading-[0.9] text-white">
-            <span class="text-gradient-gold">Contact Us</span>
-        </h1>
-        <p class="text-lg md:text-xl text-amber-100/50 max-w-2xl mx-auto font-light leading-relaxed mt-4">
-            We'd love to hear from you!
-        </p>
+        <div class="text-center mb-12">
+            <h1 class="text-6xl md:text-8xl font-semibold tracking-tighter leading-[0.9] text-white">
+                <span class="text-gradient-gold">Contact Us</span>
+            </h1>
+            <p class="text-lg md:text-xl text-amber-100/50 max-w-2xl mx-auto font-light leading-relaxed mt-4">
+                We'd love to hear from you!
+            </p>
+        </div>
+        <div class="form-container">
+            <form class="flex flex-col gap-6">
+                <input class="form-input" type="text" placeholder="Name">
+                <input class="form-input" type="text" placeholder="E-Mail I.D.">
+                <textarea class="form-textarea" placeholder="Enter message" rows="4"></textarea> 
+                <div class="text-center">
+                    <button class="form-button">Submit</button>
+                </div>
+            </form>
+        </div>
       </section>
     </main>
 
@@ -64,60 +122,12 @@
               'stroke-width': 1.5
           }
       });
-
-      // Mouse Parallax Logic
-      document.addEventListener('mousemove', (e) => {
-          const x = (e.clientX / window.innerWidth - 0.5) * 2; // -1 to 1
-          const y = (e.clientY / window.innerHeight - 0.5) * 2; // -1 to 1
-
-          document.querySelectorAll('.parallax-element').forEach(el => {
-              const speed = el.getAttribute('data-speed') || 20;
-              const rotate = el.classList.contains('rotate-12') ? 12 : 0;
-              el.style.transform = `translate(${x * speed}px, ${y * speed}px) rotate(${rotate}deg)`;
-          });
-      });
-
-      // Scroll Handling & Active Dots
-      const scrollContainer = document.getElementById('main-scroll');
-      const dots = document.querySelectorAll('.nav-dot');
-
-      function scrollToIndex(index) {
-          const section = document.getElementById(`section-${index}`);
-          section.scrollIntoView({ behavior: 'smooth' });
-      }
-
-      // Intersection Observer for Active State
-      const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                  const id = entry.target.id;
-                  const index = parseInt(id.split('-')[1]);
-
-                  // Update dots
-                  dots.forEach((dot, i) => {
-                      if (i === index) {
-                          dot.classList.add('active');
-                          dot.classList.remove('bg-amber-500/20');
-                      } else {
-                          dot.classList.remove('active');
-                          dot.classList.add('bg-amber-500/20');
-                      }
-                  });
-              }
-          });
-      }, { threshold: 0.5 });
-
-      document.querySelectorAll('section').forEach(section => {
-          observer.observe(section);
-      });
     </script>
 
     <script>
       (function() {
           const canvas = document.getElementById('cloud-canvas');
           const gl = canvas.getContext('webgl');
-          const scrollContainer = document.getElementById('main-scroll');
-
           if (!gl) return;
 
           const vertexShaderSource = `
@@ -127,7 +137,6 @@
               }
           `;
 
-          // UPDATED SHADER FOR GOLDEN/BRONZE CLOUDS
           const fragmentShaderSource = `
               precision mediump float;
               uniform vec2 u_resolution;
@@ -164,34 +173,22 @@
               void main() {
                   vec2 st = gl_FragCoord.xy/u_resolution.xy;
                   st.x *= u_resolution.x/u_resolution.y;
-
-                  // Wind direction
                   st.x -= u_time * 0.05;
-
-                  // Rolling cloud domain warping
                   vec2 q = vec2(0.);
                   q.x = fbm( st + 0.1 * u_time );
                   q.y = fbm( st + vec2(1.0) );
-
                   vec2 r = vec2(0.);
                   r.x = fbm( st + 1.0*q + vec2(1.7,9.2) + 0.15*u_time );
                   r.y = fbm( st + 1.0*q + vec2(8.3,2.8) + 0.126*u_time );
-
                   float f = fbm(st + r);
-
-                  // GOLDEN / BRONZE GRADIENT MIX
-                  // Dark Brown/Black Base -> Golden Amber Highlights
                   vec3 color = mix(
                       vec3(0.02, 0.015, 0.005), 
                       vec3(0.2, 0.15, 0.05), 
                       clamp((f*f)*4.0, 0.0, 1.0)
                   );
-
-                  // Subtle vignette
                   vec2 uv = gl_FragCoord.xy / u_resolution.xy;
                   float vignette = 1.0 - smoothstep(0.5, 1.5, length(uv - 0.5) * 1.5);
                   color *= vignette;
-
                   gl_FragColor = vec4(color, 1.0);
               }
           `;
@@ -223,10 +220,18 @@
           const uTime = gl.getUniformLocation(program, 'u_time');
 
           let time = 0;
-          let scrollSpeed = 0;
-          let lastScrollY = scrollContainer ? scrollContainer.scrollTop : 0;
-          let baseSpeed = 0.5;
-
+          function animate() {
+              time += 0.01;
+              gl.useProgram(program);
+              gl.enableVertexAttribArray(positionLocation);
+              gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+              gl.vertexAttribPointer(positionLocation, 2, gl.FLOAT, false, 0, 0);
+              gl.uniform2f(uResolution, canvas.width, canvas.height);
+              gl.uniform1f(uTime, time);
+              gl.drawArrays(gl.TRIANGLES, 0, 6);
+              requestAnimationFrame(animate);
+          }
+          
           function resize() {
               canvas.width = window.innerWidth;
               canvas.height = window.innerHeight;
@@ -234,31 +239,6 @@
           }
           window.addEventListener('resize', resize);
           resize();
-
-          if(scrollContainer) {
-              scrollContainer.addEventListener('scroll', () => {
-                  const currentScroll = scrollContainer.scrollTop;
-                  const delta = Math.abs(currentScroll - lastScrollY);
-                  scrollSpeed += delta * 0.05;
-                  lastScrollY = currentScroll;
-              });
-          }
-
-          function animate() {
-              scrollSpeed = scrollSpeed * 0.9 + baseSpeed * 0.1;
-              time += 0.005 + scrollSpeed * 0.002;
-
-              gl.useProgram(program);
-              gl.enableVertexAttribArray(positionLocation);
-              gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
-              gl.vertexAttribPointer(positionLocation, 2, gl.FLOAT, false, 0, 0);
-
-              gl.uniform2f(uResolution, canvas.width, canvas.height);
-              gl.uniform1f(uTime, time);
-
-              gl.drawArrays(gl.TRIANGLES, 0, 6);
-              requestAnimationFrame(animate);
-          }
           animate();
       })();
     </script>
