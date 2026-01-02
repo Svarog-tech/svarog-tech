@@ -1,6 +1,6 @@
 <html lang="en" class="scroll-smooth"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact Us</title>
+<title>Kontakt - Svarog Tech</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://unpkg.com/lucide@latest"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -73,21 +73,23 @@
               </a>
             </div>
       <nav class="pointer-events-auto hidden md:flex items-center gap-6 bg-[#0f0a00]/60 backdrop-blur-xl px-6 py-2 rounded-full border border-amber-500/10 shadow-2xl">
-
-        <a href="#" class="text-sm font-medium text-amber-100/60 hover:text-amber-100 transition-colors">
-          Služby
+        <a href="{% url 'index' %}" class="text-sm font-medium text-amber-100/60 hover:text-amber-100 transition-colors">
+          Domů
         </a>
-        <a href="#" class="text-sm font-medium text-amber-100/60 hover:text-amber-100 transition-colors">
-          Technologie
+        <a href="{% url 'index' %}#section-2" class="text-sm font-medium text-amber-100/60 hover:text-amber-100 transition-colors">
+          Hosting
         </a>
-        <a href="#" class="text-sm font-medium text-amber-100/60 hover:text-amber-100 transition-colors">
-          Ceník
+        <a href="{% url 'index' %}#section-4" class="text-sm font-medium text-amber-100/60 hover:text-amber-100 transition-colors">
+          Tým
+        </a>
+        <a href="{% url 'contact' %}" class="text-sm font-medium text-amber-100 transition-colors">
+          Kontakt
         </a>
       </nav>
       <div class="pointer-events-auto">
-        <button class="px-4 py-2 text-xs font-semibold tracking-wide bg-amber-100 text-amber-950 rounded-full hover:bg-amber-200 transition-all border border-amber-200/50 shadow-[0_0_15px_rgba(255,215,0,0.15)]">
+        <a href="https://[PLACEHOLDER-URL].cz/login" class="px-4 py-2 text-xs font-semibold tracking-wide bg-amber-100 text-amber-950 rounded-full hover:bg-amber-200 transition-all border border-amber-200/50 shadow-[0_0_15px_rgba(255,215,0,0.15)] inline-block">
           PŘIHLÁSIT SE
-        </button>
+        </a>
       </div>
     </header>
 
@@ -96,10 +98,10 @@
       <section class="h-screen w-full flex flex-col items-center justify-center relative px-6 snap-center">
         <div class="text-center mb-12">
             <h1 class="text-6xl md:text-8xl font-semibold tracking-tighter leading-[0.9] text-white">
-                <span class="text-gradient-gold">Contact Us</span>
+                <span class="text-gradient-gold">Kontakt</span>
             </h1>
             <p class="text-lg md:text-xl text-amber-100/50 max-w-2xl mx-auto font-light leading-relaxed mt-4">
-                We'd love to hear from you!
+                Budeme rádi, když se nám ozvete!
             </p>
         </div>
         <div class="form-container">
@@ -112,11 +114,11 @@
                         </div>
                     {% endfor %}
                 {% endif %}
-                <input class="form-input" type="text" name="name" placeholder="Name" required>
-                <input class="form-input" type="email" name="email" placeholder="E-Mail I.D." required>
-                <textarea class="form-textarea" name="message" placeholder="Enter message" rows="4" required></textarea>
+                <input class="form-input" type="text" name="name" placeholder="Jméno" required>
+                <input class="form-input" type="email" name="email" placeholder="E-mail" required>
+                <textarea class="form-textarea" name="message" placeholder="Vaše zpráva" rows="4" required></textarea>
                 <div class="text-center">
-                    <button type="submit" class="form-button">Submit</button>
+                    <button type="submit" class="form-button">Odeslat</button>
                 </div>
             </form>
         </div>
