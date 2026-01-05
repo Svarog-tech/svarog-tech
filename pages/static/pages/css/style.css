@@ -2,7 +2,8 @@
 body {
 background-color: #080500;
 color: #fffbf0;
-overflow: hidden; 
+overflow-x: hidden;
+overflow-y: auto;
 }
 .glass-card {
 background: rgba(255, 215, 0, 0.02);
@@ -22,12 +23,18 @@ scrollbar-width: none;
 .scroll-container {
 height: 100vh;
 overflow-y: scroll;
-scroll-snap-type: y mandatory;
 scroll-behavior: smooth;
 }
-section {
-scroll-snap-align: start;
-scroll-snap-stop: always;
+
+/* Only enable scroll-snap on desktop */
+@media (min-width: 768px) {
+  .scroll-container {
+    scroll-snap-type: y mandatory;
+  }
+  section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
 }
 .text-gradient {
 background: linear-gradient(to bottom, #fff8dc, #ffd700, rgba(255, 215, 0, 0.3));
