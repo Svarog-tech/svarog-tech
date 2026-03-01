@@ -1,0 +1,13 @@
+.git
+.venv
+__pycache__
+*.pyc
+.gitignore
+db.sqlite3
+.env.example
+deployment.yaml
+service.yaml
+kustomization.yaml
+cloudbuild.yaml
+Dockerfile
+.dockerignore

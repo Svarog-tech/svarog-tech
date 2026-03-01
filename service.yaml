@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: svarog-tech
+spec:
+  # This will create a LoadBalancer if you are running on a cloud provider.
+  # If you are running locally (e.g. minikube), you may want to change this to NodePort
+  type: LoadBalancer
+  selector:
+    app: svarog-tech
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000

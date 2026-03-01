@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: svarog-tech
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: svarog-tech
+  template:
+    metadata:
+      labels:
+        app: svarog-tech
+    spec:
+      containers:
+      - name: svarog-tech
+        image: svarog-tech:latest
+        ports:
+        - containerPort: 8000
